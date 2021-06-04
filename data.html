@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<title>freshfry to Google Sheet</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">FreshFry</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="https://freshfrybpd.com/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://freshfrybpd.com/public/auth/login">Orders</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<form method="post" autocomplete="off" name="freshfry">
+    <div class="mb-3">
+    <label for="date" class="form-label">date</label>
+    <input type="text" class="form-control" name="date">
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="hotel" class="form-label">hotel</label>
+    <input type="text" class="form-control" name="hotel">
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+  <div class="mb-3">
+    <label for="hamount" class="form-label">hamount</label>
+    <input type="text" name="hamount"class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="customer" class="form-label">customer</label>
+    <input type="text" name="customer" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="camount" class="form-label">camount</label>
+    <input type="text" name="camount" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="status" class="form-label">status</label>
+    <input type="text" name="status" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label for="dbn" class="form-label">dbn</label>
+    <input type="text" name="dbn" class="form-control">
+  </div>
+  
+  
+  <button type="submit" class="btn btn-primary">upload data to google sheet</button>
+</form>
+</div>
+
+
+
+
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzhNkXD1n7GIgK_q6VkBvTnylTXrMB8uzRg2lNxRibT89z-GpDrBeEqEdJmiQc6LZg8/exec'
+            const form = document.forms['freshfry']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+</body>
+</html>
