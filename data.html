@@ -26,7 +26,7 @@
           <a class="nav-link" href="https://freshfrybpd.com/public/auth/login">Orders</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="https://script.google.com/macros/s/AKfycbwc8769Y3YLTesqU65qad3IjtjyhPJKK594LzClibB1rFnJl9mXWaGS13bdfQPlH_5PjA/exec">Search Data</a>
         </li>
       </ul>
       <form class="d-flex">
@@ -85,7 +85,7 @@
             form.addEventListener('submit', e => {
               e.preventDefault()
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .then(response => alert("Data Succesfully Added to google Sheet! Thanks to Abinash"))
                 .catch(error => console.error('Error!', error.message))
             })
           </script>
